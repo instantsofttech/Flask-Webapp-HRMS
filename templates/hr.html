@@ -1,0 +1,235 @@
+{% block body %}
+<html>
+<style>
+
+.div-2 {
+    	background-color: #2EC293
+    }
+
+.div-3 {
+    	background-color: #FBD603;
+    }
+
+.bn30 {
+  border: 5em;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+  padding: 0.7em 2em;
+  border-radius: 65px;
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+  -webkit-transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  color: white;
+}
+
+.bn30:after {
+  content: "";
+  border-radius: 18px;
+  position: absolute;
+  margin: 4px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: #0e0e10;
+}
+
+.button-29 {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #FBD603 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button-54 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-54:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+
+.button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+
+.button-89 {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+/* .mySlides {display: none;}
+img {vertical-align: middle;} */
+</style> 
+<body style="background-color:rgb(6,23,58)">
+
+  <!-- <table cellspacing="10" border="0" style="box-shadow:1px 1px 10px white" width="70%" height="70%" align="center">
+    <tr>
+    <td style="background-position:center center" valign="top" align="center">  -->
+    
+    <table cellspacing ='0' border="2" cellpadding="8px" width="100%">
+      {% for item in data %}
+      <tr style="background-color:rgb(62, 76, 155);color:rgb(231, 212, 35)">
+        <td>{{item.UID}}          </td>
+        <td>{{item.UNAME}}        </td>
+        <td>{{item.EMAIL}}        </td>
+        <td>{{item.UPASS}}        </td>
+        <td>{{item.CONTACT}}      </td>
+        <td>{{item.DEPARTMENT}}   </td>
+        <td>{{item.EMERGENCY}}    </td>
+        <td>{{item.PICTURE}}      </td>
+        <td>{{item.FILEPATH}}     </td>
+        <td><a href="/product/{{item.UID}}"><button href class="bn30">Update</button></a>
+        </td>
+        <td><a href="/deleteemployee/{{item.UID}}"><button class="bn30">Delete</button></a></td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <div align="center" class="div-2" style="margin-top:50px">
+      <form action="/upload" method="POST" enctype="multipart/form-data">
+          <h3 class="page-header text-primary"> Upload Employees CSV</h3>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                  {% for category,message in messages %}
+                      <div class="alert alert-{{category}}">{{message}}</div>
+                  {% endfor %}
+              {% endif %}
+          {% endwith %}
+          <br>
+          <div class="div-3">
+              <input type="submit" value="Upload Excel File" class="button-89">
+          </div>
+      </form>
+    </div>
+
+</body>
+</html>
+{% endblock %}

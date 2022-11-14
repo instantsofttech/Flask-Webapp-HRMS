@@ -1,0 +1,131 @@
+{% block body %}
+<html>
+<style>
+
+.bn30 {
+  border: 5em;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+  padding: 0.7em 2em;
+  border-radius: 65px;
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+  -webkit-transition: box-shadow 0.25s;
+  transition: box-shadow 0.25s;
+  color: white;
+}
+
+/* table tr td {
+    text-align: center;
+    vertical-align: bottom;
+    width: 25%;
+    font-size: 14px;
+    height: 100px;
+} */
+ 
+/* #cssTable td  
+{ 
+    text-align: center;  
+    vertical-align: middle; 
+} */
+
+/* .bn30 .text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(45deg, #4568dc, #b06ab3);
+} */
+
+.bn30:after {
+  content: "";
+  border-radius: 18px;
+  position: absolute;
+  margin: 4px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background: #0e0e10;
+}
+
+/* .bn30:hover {
+  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+  box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+} */
+
+/* .bn30:hover .text {
+  background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
+} */
+/* tr:nth-child(even) {background-color: #f2f2f2;}
+a{
+color:white;
+background-color:#FF3399;
+padding:20px;
+text-decoration:none;
+border-radius:20px;
+text-align:center;
+display: block;
+width: 120px;
+} */
+
+/* .login-dark
+{
+background-color:rgb(30,40,51);
+text-align:center;
+padding:20px;
+width:350px;
+height:450px;
+border-radius:5px;
+} */
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+</style> 
+<body style="background-color:rgb(6,23,58)">
+  <table border="0" style="box-shadow:1px 1px 10px white" width="70%" height="70%" align="center">
+    <tr>
+    <td style="background-position:center center" valign="top" align="center"> 
+    <!-- <table border="0" cellpadding="8px" width="100%" style="background-color:#CCCCCC">
+     <tr style="background-color:navy;color:white">
+     <td>ID</td>
+     <td>USERNAME</td>
+     <td>EMAIL</td>
+     <td>PASSWORD</td>
+     <td>CONTACT</td>
+     <td>DEPARTMENT</td>
+     <td>EMERGENCY</td>
+     <td>PICTURE</td>
+     <td>FILEPATH</td>
+     </tr>
+     </table>
+    -->
+
+    <table border="1" cellpadding="8px" width="100%">
+      {% for item in data %}
+      <tr style="background-color:rgb(62, 76, 155);color:rgb(58, 236, 222)">
+        <td>{{item.UID}}</td>
+        <td>{{item.UNAME}}</td>
+        <td>{{item.EMAIL}}</td>
+        <td>{{item.UPASS}}</td>
+        <td>{{item.CONTACT}}</td>
+        <td>{{item.DEPARTMENT}}</td>
+        <td>{{item.EMERGENCY}}</td>
+        <td>{{item.PICTURE}}</td>
+        <td>{{item.FILEPATH}}</td>
+      </tr>
+      {% endfor %}
+    </table>   
+    </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,45 @@
+
+{% extends 'layout.html' %}
+{% block body %}
+  <h3 class='jumbotron'>Welcome: {{session.username}}</h3>
+
+  <h4 class='text-center'>User Details</h4><hr>
+
+  <form action="{{url_for('home')}}" method='post' enctype="multipart/form-data">
+
+  <div class='form-group'>
+    <label>Employee ID</label>
+    <p>{{session.uid}}</p>
+  </div><hr>
+
+  <img align="right" src="{{ session.file_path }}" width="250" height="300">
+
+  <div class='form-group'>
+    <label>E-mail</label>
+    <p>{{session.email}}</p>
+  </div><hr>
+  
+
+  <div class='form-group'>
+    <label>Department</label>
+    <p>{{session.department}}</p>
+  </div><hr>
+
+  <div class='form-group'>
+    <label>Personal Contact</label>
+    <p>{{session.contact}}</p>
+  </div><hr>
+
+  <div class='form-group'>
+    <label>Emergency Contact</label>
+    <p>{{session.emergency}}</p>
+  </div><hr>  
+
+  <div align="right">
+    <input type = "file" name = "file" value ='Update'  class='btn btn-success'> <br>
+    <input type='submit' name='submit' value='Submit' class='btn btn-success'>
+  </div>
+
+</form>
+
+{% endblock %}
