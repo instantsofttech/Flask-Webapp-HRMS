@@ -1,10 +1,12 @@
-from flask import Flask, render_template, request, redirect, session, flash, url_for
-from functools import wraps
 import csv
 import os
-from werkzeug.utils import secure_filename
-from flask_mysqldb import MySQL
+from functools import wraps
+
 import pandas as pd
+from flask import (Flask, flash, redirect, render_template, request, session,
+                   url_for)
+from flask_mysqldb import MySQL
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'static/uploads/'
@@ -145,47 +147,6 @@ def upload():
         print("done!")
     conn.close()
     return redirect(url_for('home'))
-
-    # def upload():
-#     uploaded_file=request.files['uploadExcel']
-#     if uploaded_file.filename !='':
-#         file_path=os.path.join(app.config['UPLOAD_FOLD'], uploaded_file.filename)
-#         uploaded_file.save(file_path)
-#         parseCSV(file_path)
-#     return redirect(url_for('hr'))
-# def parseCSV(filepath1):
-#     col_names=['UNAME', 'EMAIL', 'CONTACT', 'DEPARTMENT', 'EMERGENCY']
-#     csvData= pd.read_csv(filepath1, names=col_names, header=None)
-#     for i,row in csvData.iterrows():
-#         sql ="INSERT INTO db_sample.users (UNAME, EMAIL, CONTACT, DEPARTMENT, EMERGENCY) VALUES (%s, %s, %s, %s,%s)"
-#         value = (row['UNAME'],row['EMAIL'],str(row['CONTACT']),row['DEPARTMENT'],str(row['EMERGENCY']))
-#         con=mysql.connection.cursor()
-#         con.execute(sql,value, if_exists='append')
-#         con.commit()
-#         print(i, row['UNAME'],row['EMAIL'],str(row['CONTACT']),row['DEPARTMENT'],str(row['EMERGENCY']))
-
-    # con=mysql.connection.cursor()
-    # con.execute("SELECT * from db_sample.users")
-    # data=con.fetchall()
-    # con.close()
-    # if request.method == 'POST':
-    #     uploadExcel = request.files['uploadExcel']
-    #     if uploadExcel.filename != '':
-    #         filepath =os.path.join(app.config['UPLOAD_FOLD'], uploadExcel.filename)
-    #         uploadExcel.save(filepath)
-    #         con=mysql.connection.cursor()
-    #         con.execute("INSERT into db_sample.users(UNAME, EMAIL, CONTACT, DEPARTMENT, EMERGENCY)values(?,?,?,?)",(uploadExcel.filename,))
-    #         con.commit()
-    #         flash("Excel Sheet Uploaded Successfully", "success")
-
-    #         con=mysql.connection.cursor()
-    #         con.execute("SELECT * from users")
-    #         data=con.fetchall()
-    #         con.close()
-    #         return render_template("hr.html", data=data)
-    # return render_template("hr.html",data=data)
-
-# Home Page
 
 
 @app.route("/home", methods=['POST', 'GET'])
